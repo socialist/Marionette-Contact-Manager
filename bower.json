@@ -1,0 +1,37 @@
+{
+  "name": "Marionette-ToDo",
+  "authors": [
+    "seregas <skripnichenko.s.a@gmail.com>"
+  ],
+  "description": "Marionette application",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "Marionette",
+    "ToDo",
+    "Sample",
+    "Contact",
+    "Manager"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "requirejs": "~2.1.22",
+    "bootstrap": "4.0.0-alpha.2",
+    "backbone.marionette": "~2.4.4",
+    "backbone.localStorage": "backbone.localstorage#~1.1.16",
+    "json2": "*",
+    "tether": "~1.1.1",
+    "requirejs-underscore-tpl": "*",
+    "text": "~2.0.14",
+    "backbone.syphon": "~0.6.3"
+  }
+}

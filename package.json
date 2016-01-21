@@ -1,0 +1,29 @@
+{
+  "name": "Marionette-ToDo",
+  "version": "0.0.0",
+  "description": "Marionette application",
+  "main": "index.html",
+  "dependencies": {
+    "closure-linter-wrapper": "^1.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:seregas/marionette-todo.git"
+  },
+  "keywords": [
+    "Marionette",
+    "ToDo",
+    "application",
+    "Contact",
+    "Manager"
+  ],
+  "author": "seregas <skripnichenko.s.a@gmail.com>",
+  "license": "ISC"
+}
