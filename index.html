@@ -7,15 +7,13 @@
     <title>Marionette Contact Manager</title>
 
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/spin/stylesheets/jquery.spin.css">
     <link rel="stylesheet" href="assets/css/application.css">
 </head>
 <body>
-    <div id="Sidebar"></div>
+    <div id="SidebarRegion"></div>
 
-    <div id="MainRegion" class="container-fluid">
-        <p>Here is static content in web page.
-            You'll botice that it gets replaced by our app as soon as we start it.</p>
-    </div>
+    <div id="MainRegion" class="container-fluid"></div>
     
     <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="DialogLabel" aria-hidden="true" id="Dialog">
         <div class="modal-dialog" id="DialogRegion" role="document">
@@ -23,6 +21,6 @@
         </div>
     </div>
 
-    <script data-main="./assets/js/require_main.js" src="vendor/requirejs/require.js"></script>
+<script data-main="./assets/js/require_main.js" src="vendor/requirejs/require.js"></script>
 </body>
 </html>

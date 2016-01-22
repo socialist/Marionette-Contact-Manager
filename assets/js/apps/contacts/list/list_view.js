@@ -34,8 +34,10 @@ define(['app',
         criteria: 'input.js-filter-criteria'
       },
 
-      filterClicked: function () {
+      filterClicked: function (e) {
         var criteria = this.$('.js-filter-criteria').val();
+
+        e.preventDefault();
         this.trigger('contacts:filter', criteria);
       }
     });
@@ -56,6 +58,7 @@ define(['app',
 
       flash: function (cssClass) {
         var $view = this.$el;
+
         $view.hide().toggleClass(cssClass).fadeIn(800, function () {
           setTimeout(function () {
             $view.toggleClass(cssClass);
@@ -64,11 +67,11 @@ define(['app',
       },
 
       highlightName: function (e) {
-        this.$el.toggleClass('warning');
+        this.$el.toggleClass('table-warning');
       },
 
       remove: function () {
-        this.$el.fadeOut(function () {
+        this.$el.addClass('table-danger').fadeOut(function () {
           $(this).remove();
         });
       }

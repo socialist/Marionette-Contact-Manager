@@ -7,7 +7,7 @@ define([ 'marionette', 'backbone', 'assets/js/apps/config/marionette/regions/dia
   ContactManager = new Marionette.Application();
 
   ContactManager.addRegions({
-    sidebarRegion: '#HeaderRegion',
+    sidebarRegion: '#SidebarRegion',
     mainRegion: '#MainRegion',
     dialogRegion: Marionette.Region.Dialog.extend({
       el: '#DialogRegion'
@@ -23,10 +23,25 @@ define([ 'marionette', 'backbone', 'assets/js/apps/config/marionette/regions/dia
     return Backbone.history.fragment;
   };
 
+  ContactManager.startSubApp = function (appName, args) {
+    var currentApp = ContactManager.module(appName);
+
+    if (ContactManager.currentApp === currentApp) {
+      return;
+    }
+
+    if (ContactManager.currentApp) {
+      ContactManager.currentApp.stop();
+    }
+
+    ContactManager.currentApp = currentApp;
+    currentApp.start(args);
+  };
+
   ContactManager.on('start', function () {
     var self = this;
     if (Backbone.history) {
-      require(['assets/js/apps/contacts/contacts_app'], function () {
+      require(['assets/js/apps/contacts/contacts_app', 'assets/js/apps/about/about_app'], function () {
         Backbone.history.start();
 
         if (self.getCurrentRoute() === '') {

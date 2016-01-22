@@ -32,6 +32,9 @@
     "tether": "~1.1.1",
     "requirejs-underscore-tpl": "*",
     "text": "~2.0.14",
-    "backbone.syphon": "~0.6.3"
+    "backbone.syphon": "~0.6.3",
+    "spin": "~1.1.6",
+    "backbone.select": "~1.5.3",
+    "r.js": "~2.1.22"
   }
 }

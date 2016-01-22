@@ -3,7 +3,7 @@
  */
 define(['app', 'assets/js/apps/config/storage/localstorage'], function (ContactManager) {
   ContactManager.module('Entities', function (Entities, ContactManager, Backbone, Marionette, $, _) {
-    var contacts, initializeContacts;
+    var contacts, initializeContacts, API;
 
     Entities.Contact = Backbone.Model.extend({
       urlRoot: 'contacts',
@@ -67,7 +67,7 @@ define(['app', 'assets/js/apps/config/storage/localstorage'], function (ContactM
       return contacts;
     };
 
-    var API = {
+    API = {
       getContactEntities: function () {
         var contacts, promise;
 
@@ -80,10 +80,10 @@ define(['app', 'assets/js/apps/config/storage/localstorage'], function (ContactM
                 resolve(data);
               },
               error: function () {
-                console.log(arguments);
+                resolve(undefined);
               }
             });
-          }, 300);
+          }, 1000);
         });
 
         return promise.then(function (contacts) {
@@ -113,7 +113,7 @@ define(['app', 'assets/js/apps/config/storage/localstorage'], function (ContactM
                 resolve(undefined);
               }
             });
-          }, 300);
+          }, 1000);
         });
       }
     };
@@ -124,6 +124,10 @@ define(['app', 'assets/js/apps/config/storage/localstorage'], function (ContactM
 
     ContactManager.reqres.setHandler('contact:entity', function (id) {
       return API.getContactEntity(id);
+    });
+
+    ContactManager.reqres.setHandler('contact:entity:new', function (id) {
+      return new Entities.Contact(id);
     });
   });
 
